@@ -97,6 +97,7 @@ input {
   max-width: var(--container-width);
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .text-accent {
@@ -105,9 +106,8 @@ input {
 
 .section-title {
   font-weight: 700;
-  font-size: 54px;
-  line-height: 100%;
-
+  font-size: clamp(24px, 5vw, 54px);
+  line-height: 110%;
   text-transform: uppercase;
   margin-bottom: 26px;
 }
@@ -118,10 +118,9 @@ input {
 
 .section-subtitle {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 3vw, 24px);
+  line-height: 130%;
   text-transform: uppercase;
-
   color: var(--color-text-light);
   margin-bottom: 46px;
   letter-spacing: 1px;
@@ -158,13 +157,14 @@ input {
   background-color: var(--color-dark);
   color: var(--color-white);
   box-shadow: var(--shadow-card);
-  padding: 30px 0;
-  border-radius: 47px;
+  padding: clamp(16px, 3vw, 30px) 20px;
+  border-radius: clamp(24px, 4vw, 47px);
   font-weight: 700;
-  font-size: 26px;
+  font-size: clamp(16px, 2.5vw, 26px);
   line-height: 133%;
   letter-spacing: 2%;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .btn-dark:hover {
@@ -252,7 +252,8 @@ input {
    Hero Section
    ========================================================================== */
 .hero {
-  min-height: 882px;
+  min-height: 100vh;
+  min-height: 100dvh;
   background-image: url(../images/hero-character.png);
   background-size: cover;
   background-position: center;
@@ -261,8 +262,8 @@ input {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-bottom-left-radius: 108px;
-  border-bottom-right-radius: 108px;
+  border-bottom-left-radius: clamp(40px, 8vw, 108px);
+  border-bottom-right-radius: clamp(40px, 8vw, 108px);
 }
 
 .hero .container {
@@ -310,11 +311,6 @@ input {
   margin-bottom: 30px;
 }
 
-.hero-blender img {
-  width: 60px;
-  height: 60px;
-}
-
 .hero-image {
   flex: 1;
   max-width: 500px;
@@ -335,7 +331,6 @@ input {
 
 .video-wrapper {
   max-width: var(--container-width);
-  height: 721px;
   margin: 0 auto;
 }
 
@@ -352,7 +347,7 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 108px;
+  border-radius: clamp(20px, 8vw, 108px);
 }
 
 .play-btn {
@@ -384,29 +379,52 @@ input {
 .who-for-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
   gap: 30px;
 }
 
 .who-for-item {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: contents;
 }
 
 .who-for-label {
   padding: 24px;
-  border-radius: 47px;
+  border-radius: clamp(24px, 5vw, 47px);
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(16px, 3vw, 24px);
   line-height: 132%;
   text-transform: uppercase;
   background-color: var(--color-primary);
   color: var(--color-white);
   text-align: start;
   box-shadow: 0px 8px 18.6px 0px #00000040;
-  height: 131px;
   display: flex;
   align-items: center;
+  grid-row: 1;
+}
+
+.who-for-item:nth-child(1) .who-for-label {
+  grid-column: 1;
+}
+.who-for-item:nth-child(2) .who-for-label {
+  grid-column: 2;
+}
+.who-for-item:nth-child(3) .who-for-label {
+  grid-column: 3;
+}
+
+.who-for-desc {
+  grid-row: 2;
+}
+
+.who-for-item:nth-child(1) .who-for-desc {
+  grid-column: 1;
+}
+.who-for-item:nth-child(2) .who-for-desc {
+  grid-column: 2;
+}
+.who-for-item:nth-child(3) .who-for-desc {
+  grid-column: 3;
 }
 
 .who-for-desc {
@@ -421,7 +439,7 @@ input {
 
 .who-for-desc p {
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(14px, 2.5vw, 24px);
   line-height: 132%;
   letter-spacing: 0%;
   text-transform: uppercase;
@@ -436,12 +454,14 @@ input {
   background-color: var(--color-primary);
   color: var(--color-white);
   position: relative;
-  border-radius: 69px;
+  border-radius: clamp(30px, 6vw, 69px);
+  z-index: -2;
 }
-.superpower img {
+.superpower > img {
   position: absolute;
   right: 0;
   top: -72px;
+  z-index: -1;
 }
 
 .superpower .container:first-child {
@@ -458,9 +478,8 @@ input {
 
 .superpower-title {
   font-weight: 700;
-  font-style: Bold;
-  font-size: 54px;
-  line-height: 100%;
+  font-size: clamp(24px, 5vw, 54px);
+  line-height: 110%;
   letter-spacing: 0%;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -468,8 +487,8 @@ input {
 
 .superpower-subtitle {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 3vw, 24px);
+  line-height: 130%;
   letter-spacing: 0%;
   text-transform: uppercase;
   margin-bottom: 35px;
@@ -477,8 +496,8 @@ input {
 
 .superpower-text {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 133%;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 150%;
   letter-spacing: 2%;
   color: #ffffffc9;
 }
@@ -497,15 +516,15 @@ input {
 .benefit-card {
   color: var(--color-white);
   font-weight: 700;
-  font-size: 26px;
+  font-size: clamp(16px, 3vw, 26px);
   line-height: 133%;
   letter-spacing: 2%;
   text-transform: uppercase;
   border: 1px solid var(--color-white);
-  padding: 48px;
+  padding: clamp(24px, 4vw, 48px);
   flex: 1;
   box-shadow: 0px 8px 18.6px 0px #00000040;
-  border-radius: 47px;
+  border-radius: clamp(24px, 4vw, 47px);
   text-align: center;
 }
 
@@ -525,11 +544,15 @@ input {
 }
 
 .learn-card {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-
+.blur {
+  position: absolute;
+  left: -200px;
+  z-index: -1;
+  top: -200px;
+}
 .learn-card-large {
   grid-column: span 2;
   flex-direction: row;
@@ -546,8 +569,8 @@ input {
 
 .learn-card-content h3 {
   font-weight: 600;
-  font-size: 32px;
-  line-height: 100%;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 110%;
   letter-spacing: 0%;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -555,8 +578,8 @@ input {
 
 .learn-card-content p {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 2.5vw, 24px);
+  line-height: 130%;
   letter-spacing: 0%;
   text-transform: uppercase;
   color: #1e1e1ec4;
@@ -572,6 +595,7 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 37px;
 }
 
 .student-work {
@@ -610,34 +634,35 @@ input {
   background-color: var(--color-primary);
   color: var(--color-white);
   text-align: center;
+  border-radius: clamp(30px, 6vw, 69px);
 }
 
 .final-project-subtitle {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 3vw, 24px);
+  line-height: 130%;
   letter-spacing: 0%;
   text-align: center;
   text-transform: uppercase;
   margin-top: 36px;
-  margin-bottom: 76px;
+  margin-bottom: clamp(30px, 6vw, 76px);
 }
 
 .final-project-image {
-  border-radius: 87px;
+  border-radius: clamp(20px, 6vw, 87px);
   margin-bottom: 50px;
 }
 
 .final-project-image img {
   width: 100%;
   height: auto;
-  border-radius: 87px;
+  border-radius: clamp(20px, 6vw, 87px);
 }
 
 .final-project-text {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 3vw, 24px);
+  line-height: 130%;
   letter-spacing: 0%;
   text-align: center;
   text-transform: uppercase;
@@ -652,7 +677,6 @@ input {
 }
 
 .certificate-image {
-  max-width: 600px;
   margin: 0 auto;
 }
 .certificate .section-title {
@@ -687,7 +711,7 @@ input {
 
 .author-label {
   font-weight: 700;
-  font-size: 33px;
+  font-size: clamp(20px, 4vw, 33px);
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
@@ -696,8 +720,8 @@ input {
 
 .author-experience {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 3vw, 24px);
+  line-height: 130%;
   letter-spacing: 0%;
   text-transform: uppercase;
   color: #1e1e1e;
@@ -726,7 +750,7 @@ input {
 
 .author-facts p {
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(14px, 2.5vw, 24px);
   line-height: 132%;
   letter-spacing: 0%;
   text-transform: uppercase;
@@ -735,7 +759,13 @@ input {
 .author-brands {
   display: flex;
   align-items: center;
-  gap: 52px;
+  gap: clamp(15px, 4vw, 52px);
+  flex-wrap: wrap;
+}
+
+.author-brands img {
+  max-width: 100%;
+  height: auto;
 }
 
 .author-brands img:hover {
@@ -753,11 +783,11 @@ input {
    Form Section
    ========================================================================== */
 .form-section {
-  padding: 62px 0;
+  padding: clamp(30px, 5vw, 62px) 0;
   background-color: var(--color-primary);
-  border-radius: 69px;
+  border-radius: clamp(30px, 6vw, 69px);
   position: relative;
-  margin-bottom: 215px;
+  margin-bottom: clamp(60px, 15vw, 215px);
   box-shadow: 0px 8px 18.6px 0px #00000040;
 }
 
@@ -777,11 +807,10 @@ input {
 
 .form-title {
   font-weight: 700;
-  font-size: 54px;
-  line-height: 100%;
+  font-size: clamp(24px, 5vw, 54px);
+  line-height: 110%;
   letter-spacing: 0%;
   text-transform: uppercase;
-
   color: var(--color-white);
   margin-bottom: 20px;
 }
@@ -792,26 +821,26 @@ input {
   color: var(--color-white);
   padding: 16px 24px;
   font-weight: 400;
-  font-size: 36px;
+  font-size: clamp(18px, 4vw, 36px);
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
   border-radius: 21px;
   margin-bottom: 30px;
   box-shadow: var(--shadow-card);
-  width: 470px;
+  max-width: 100%;
   text-align: center;
 }
 
 .form-text {
   color: var(--color-white);
   font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
+  font-size: clamp(14px, 2.5vw, 24px);
+  line-height: 130%;
   letter-spacing: 0%;
   text-transform: uppercase;
   max-width: 1080px;
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 5vw, 60px);
 }
 
 .contact-form {
@@ -823,11 +852,11 @@ input {
 
 .form-group input {
   width: 100%;
-  padding: 30px 34px;
+  padding: clamp(16px, 3vw, 30px) clamp(20px, 3vw, 34px);
   background-color: var(--color-white);
-  border-radius: 47px;
+  border-radius: clamp(24px, 4vw, 47px);
   font-weight: 300;
-  font-size: 26px;
+  font-size: clamp(16px, 2.5vw, 26px);
   line-height: 133%;
   letter-spacing: 2%;
   text-transform: uppercase;
@@ -894,10 +923,9 @@ input {
   align-items: flex-start;
   gap: 10px;
   font-weight: 400;
-  font-size: 28px;
+  font-size: clamp(16px, 3vw, 28px);
   line-height: 100%;
   letter-spacing: 0%;
-
   color: #0000008f;
 }
 .footer-address span {
@@ -916,11 +944,10 @@ input {
 .footer-phone a {
   display: block;
   font-weight: 700;
-  font-size: 42px;
+  font-size: clamp(20px, 4vw, 42px);
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
-
   color: #0000008f;
   margin-bottom: 5px;
 }
@@ -931,7 +958,7 @@ input {
 
 .footer-phone span {
   font-weight: 400;
-  font-size: 28px;
+  font-size: clamp(14px, 3vw, 28px);
   line-height: 100%;
   letter-spacing: 0%;
   color: #0000008f;
@@ -978,14 +1005,67 @@ input {
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
+@media (max-width: 1300px) {
+  .superpower > img {
+    max-width: 250px;
+    top: -50px;
+    z-index: -1;
+  }
+
+  .form-image {
+    transform: scale(0.6);
+    right: 20px;
+    bottom: -150px;
+  }
+}
+@media (max-width: 1200px) {
+  .superpower > img {
+    max-width: 200px;
+    top: -50px;
+  }
+
+  .form-image {
+    transform: scale(0.6);
+    right: 20px;
+    bottom: -150px;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero .container {
     flex-direction: column;
     text-align: center;
   }
 
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .blur {
+    top: 100px;
+  }
+
   .hero-content {
     max-width: 100%;
+  }
+
+  .hero-title {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+  .hero-blender {
+    margin: auto;
+  }
+  .hero-blender img {
+    margin: auto;
+    text-align: center;
+    width: 200px;
   }
 
   .hero-image {
@@ -997,13 +1077,41 @@ input {
   }
 
   .learn-card-large {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Все карточки: текст сверху, картинка снизу */
+  .learn-card-large > .learn-card-content {
+    order: -1 !important;
+  }
+
+  .learn-card-large > .learn-card-image {
+    order: 0 !important;
+  }
+
+  .learn-card-large > .blur {
+    order: 10 !important;
+  }
+
+  .learn-card-large {
     grid-column: span 1;
     flex-direction: column;
+  }
+
+  .learn-card-large .learn-card-content {
+    padding: 20px;
   }
 
   .superpower .container:first-child {
     flex-direction: column;
     text-align: center;
+  }
+
+  .superpower > img {
+    max-width: 180px;
+    top: -30px;
+    right: 0px;
   }
 
   .author .container {
@@ -1013,15 +1121,25 @@ input {
   .author-photo {
     flex: none;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .author-brands img {
+    width: auto;
+    max-width: 120px;
+  }
+
+  .form-image {
+    display: none;
+  }
+
+  .form-section {
+    margin-bottom: 60px;
   }
 }
 
-@media (max-width: 768px) {
-  :root {
-    --section-padding: 60px;
-  }
-
+@media (max-width: 878px) {
   .nav-menu,
   .header .btn {
     display: none;
@@ -1030,51 +1148,435 @@ input {
   .burger {
     display: flex;
   }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 40px;
+  }
+
+  .hero {
+    padding-bottom: 60px;
+    padding-top: 80px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero .container {
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .hero-blender img {
+    width: 100px;
+    margin: 0;
+  }
+
+  .hero-badge {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    text-align: start;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .section-title {
+    font-size: 22px;
+    line-height: 120%;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
 
   .who-for-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+
+  .who-for-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .who-for-label {
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .who-for-desc {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .who-for-item:nth-child(1) .who-for-label,
+  .who-for-item:nth-child(2) .who-for-label,
+  .who-for-item:nth-child(3) .who-for-label,
+  .who-for-item:nth-child(1) .who-for-desc,
+  .who-for-item:nth-child(2) .who-for-desc,
+  .who-for-item:nth-child(3) .who-for-desc {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .who-for-desc {
+    gap: 10px;
+  }
+
+  .who-for-desc img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .who-for-desc p {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .superpower {
+    border-radius: 30px;
+  }
+
+  .superpower-title {
+    font-size: 22px;
+  }
+
+  .superpower-subtitle {
+    font-size: 14px;
+  }
+
+  .superpower-text {
+    font-size: 13px;
   }
 
   .benefits-row {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .benefit-card {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+
+  .learn-card-content {
+    padding: 15px 0;
+  }
+
+  .learn-card-content h3 {
+    font-size: 18px;
+  }
+
+  .learn-card-content p {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .learn-card-image img {
+    border-radius: 20px;
+  }
+
+  .final-project-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .final-project-image {
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+
+  .final-project-image img {
+    border-radius: 20px;
+  }
+
+  .final-project-text {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .certificate .section-title {
+    margin-bottom: 30px;
+  }
+
+  .author-label {
+    font-size: 18px;
+  }
+
+  .author-experience {
+    font-size: 14px;
+  }
+
+  .author-name {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .author-facts {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .author-facts li {
+    gap: 10px;
+  }
+
+  .author-facts li img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .author-facts p {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .author-brands {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .author-brands img {
+    max-width: 100px;
+  }
+
+  .form-section {
+    border-radius: 30px;
+    margin-bottom: 40px;
   }
 
   .form-wrapper {
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 20px 15px;
   }
 
-  .form-image {
-    display: none;
+  .form-title {
+    font-size: 22px;
+  }
+
+  .form-badge {
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 15px;
+  }
+
+  .form-text {
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .form-group input {
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+  }
+
+  .btn-dark {
+    padding: 16px 20px;
+    font-size: 16px;
+    border-radius: 25px;
   }
 
   .footer-content {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
+  }
+
+  .footer-address {
+    align-items: center;
+    font-size: 16px;
   }
 
   .footer-phone {
     text-align: center;
   }
 
-  .author-brands {
-    justify-content: center;
+  .footer-phone a {
+    font-size: 24px;
+  }
+
+  .footer-phone span {
+    font-size: 14px;
+  }
+
+  .blender-blur {
+    display: none;
+  }
+
+  .blur {
+    display: none;
+  }
+
+  .superpower > img {
+    max-width: 150px;
+    top: -35px;
+    right: 0px;
   }
 }
 
 @media (max-width: 480px) {
+  :root {
+    --section-padding: 25px;
+  }
+  .author-brands img {
+    width: 100px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero-badge {
+    padding: 8px 14px;
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
+
   .hero-title {
-    font-size: 36px;
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
   }
 
   .section-title {
+    font-size: 20px;
+  }
+
+  .nav-menu li a,
+  .nav-menu a {
+    font-size: 16px;
+  }
+
+  .video-placeholder img {
+    border-radius: 15px;
+  }
+
+  .play-btn svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .who-for-label {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .who-for-desc p {
+    font-size: 13px;
+  }
+
+  .superpower-title {
+    font-size: 20px;
+  }
+
+  .benefit-card {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  .learn-card-content h3 {
+    font-size: 16px;
+  }
+
+  .learn-card-content p {
+    font-size: 13px;
+  }
+
+  .learn-card-image {
+    min-height: 150px;
+  }
+
+  .learn-card-image img {
+    border-radius: 15px;
+  }
+
+  .student-work {
+    font-size: 8px;
+    padding: 5px 8px;
+    border-radius: 10px;
+  }
+
+  .final-project-subtitle,
+  .final-project-text {
+    font-size: 13px;
+  }
+
+  .author-name {
     font-size: 24px;
   }
 
-  .btn {
-    padding: 12px 24px;
+  .author-brands img {
+    max-width: 70px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .form-badge {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .form-text {
     font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  .btn-dark {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  .footer-phone a {
+    font-size: 20px;
+  }
+
+  .footer-phone span,
+  .footer-address {
+    font-size: 14px;
+  }
+
+  .superpower > img {
+    display: none;
   }
 }
 

@@ -38,10 +38,10 @@
  */
 
 // ID вашей Google таблицы (из URL: https://docs.google.com/spreadsheets/d/SHEET_ID/edit)
-const SHEET_ID = 'YOUR_SHEET_ID_HERE';
+const SHEET_ID = "YOUR_SHEET_ID_HERE";
 
 // Название листа
-const SHEET_NAME = 'Заявки';
+const SHEET_NAME = "Заявки";
 
 /**
  * Обработчик POST запросов
@@ -58,33 +58,34 @@ function doPost(e) {
     if (!sheet) {
       const ss = SpreadsheetApp.openById(SHEET_ID);
       const newSheet = ss.insertSheet(SHEET_NAME);
-      newSheet.appendRow(['Дата/Время', 'Имя', 'Телефон', 'Источник']);
+      newSheet.appendRow(["Дата/Время", "Имя", "Телефон", "Источник"]);
       sheet = newSheet;
     }
 
     // Форматируем дату
-    const timestamp = data.timestamp ?
-      new Date(data.timestamp).toLocaleString('ru-RU', { timeZone: 'Asia/Bishkek' }) :
-      new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Bishkek' });
+    const timestamp = data.timestamp
+      ? new Date(data.timestamp).toLocaleString("ru-RU", {
+          timeZone: "Asia/Bishkek",
+        })
+      : new Date().toLocaleString("ru-RU", { timeZone: "Asia/Bishkek" });
 
     // Добавляем строку с данными
     sheet.appendRow([
       timestamp,
-      data.name || '',
-      data.phone || '',
-      data.source || ''
+      data.name || "",
+      data.phone || "",
+      data.source || "",
     ]);
 
     // Возвращаем успешный ответ
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: true, message: 'Data saved' }))
-      .setMimeType(ContentService.MimeType.JSON);
-
+    return ContentService.createTextOutput(
+      JSON.stringify({ success: true, message: "Data saved" }),
+    ).setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
     // Возвращаем ошибку
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: false, error: error.message }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(
+      JSON.stringify({ success: false, error: error.message }),
+    ).setMimeType(ContentService.MimeType.JSON);
   }
 }
 
@@ -92,13 +93,13 @@ function doPost(e) {
  * Обработчик GET запросов (для тестирования)
  */
 function doGet(e) {
-  return ContentService
-    .createTextOutput(JSON.stringify({
-      status: 'ok',
-      message: 'APEX Academy Form Handler is running',
-      timestamp: new Date().toISOString()
-    }))
-    .setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(
+    JSON.stringify({
+      status: "ok",
+      message: "APEX Academy Form Handler is running",
+      timestamp: new Date().toISOString(),
+    }),
+  ).setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
@@ -108,18 +109,17 @@ function testFormSubmission() {
   const testData = {
     postData: {
       contents: JSON.stringify({
-        name: 'Тест Тестов',
-        phone: '+996 555 123456',
+        name: "Тест Тестов",
+        phone: "+996 555 123456",
         timestamp: new Date().toISOString(),
-        source: 'https://example.com/test'
-      })
-    }
+        source: "https://example.com/test",
+      }),
+    },
   };
 
   const result = doPost(testData);
   Logger.log(result.getContent());
 }
-
 
 /**
  * АЛЬТЕРНАТИВНЫЙ СПОСОБ - ИСПОЛЬЗОВАНИЕ GOOGLE FORMS
