@@ -764,7 +764,7 @@ input {
 }
 
 .author-brands img {
-  max-width: 100%;
+  max-width: 100% !important;
   height: auto;
 }
 
@@ -1127,7 +1127,7 @@ input {
 
   .author-brands img {
     width: auto;
-    max-width: 120px;
+    max-width: 120px !important;
   }
 
   .form-image {
@@ -1158,7 +1158,9 @@ input {
   .hero {
     padding-bottom: 60px;
     padding-top: 80px;
-    min-height: auto;
+    min-height: 50vh;
+    background-position: center 0px;
+    background-size: 150%;
   }
 
   .hero-content {
@@ -1173,6 +1175,9 @@ input {
   .hero-blender img {
     width: 100px;
     margin: 0;
+  }
+  .hero-blender {
+    margin-top: 46px;
   }
 
   .hero-badge {
@@ -1303,15 +1308,6 @@ input {
     margin-bottom: 30px;
   }
 
-  .final-project-image {
-    border-radius: 20px;
-    margin-bottom: 30px;
-  }
-
-  .final-project-image img {
-    border-radius: 20px;
-  }
-
   .final-project-text {
     font-size: 14px;
     line-height: 140%;
@@ -1360,7 +1356,7 @@ input {
   }
 
   .author-brands img {
-    max-width: 100px;
+    width: 90px !important;
   }
 
   .form-section {
@@ -1444,12 +1440,24 @@ input {
   }
 }
 
+@media (max-width: 524px) {
+  .hero {
+    background-size: 200%;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero {
+    background-size: 250%;
+  }
+}
+
 @media (max-width: 480px) {
   :root {
     --section-padding: 25px;
   }
   .author-brands img {
-    width: 100px;
+    width: 90px !important;
   }
 
   .container {
@@ -1538,7 +1546,7 @@ input {
   }
 
   .author-brands img {
-    max-width: 70px;
+    max-width: 70px !important;
   }
 
   .form-title {
