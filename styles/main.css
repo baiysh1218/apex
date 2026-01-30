@@ -352,14 +352,25 @@ input {
 
 .play-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: var(--transition);
+  z-index: 2;
+}
+
+.play-btn svg {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
 }
 
 .play-btn:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: scale(1.1);
 }
 
 .blender-blur {
