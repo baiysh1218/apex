@@ -32,6 +32,28 @@
   const burger = document.querySelector(".burger");
   const navMenu = document.querySelector(".nav-menu");
   const contactForm = document.getElementById("contact-form");
+  const toast = document.getElementById("toast");
+
+  // ==========================================================================
+  // Toast Notification
+  // ==========================================================================
+
+  function showToast() {
+    if (toast) {
+      toast.classList.add("show");
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        hideToast();
+      }, 5000);
+    }
+  }
+
+  // Make hideToast global for the onclick handler
+  window.hideToast = function() {
+    if (toast) {
+      toast.classList.remove("show");
+    }
+  };
 
   // ==========================================================================
   // Header Scroll Effect
@@ -169,6 +191,7 @@
         // Demo mode - show success without actual submission
         console.log("Demo mode: Form data:", { name, phone });
         form.reset();
+        showToast();
       } else {
         // Real submission to Google Sheets
         const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -185,6 +208,7 @@
         });
 
         form.reset();
+        showToast();
       }
     } catch (error) {
       console.error("Form submission error:", error);

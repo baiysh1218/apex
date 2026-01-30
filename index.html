@@ -44,6 +44,25 @@
     <title>3D Анимация на Blender с нуля | APEX Academy</title>
   </head>
   <body>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+      <div class="toast-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="toast-content">
+        <p class="toast-title">Заявка отправлена!</p>
+        <p class="toast-message">Мы свяжемся с вами в ближайшее время</p>
+      </div>
+      <button class="toast-close" onclick="hideToast()">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
     <!-- Header -->
     <header class="header">
       <div class="container">
@@ -527,13 +546,13 @@
             />
           </a>
           <div class="footer-socials">
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/apexkgz?igsh=dWtsdmM4Y2JobmFo" target="_blank" aria-label="Instagram">
               <img src="images/instagram.svg" alt="" />
             </a>
-            <a href="#" aria-label="Telegram">
-              <img src="images/telegram.svg" alt="" />
+            <a href="https://2gis.kg/bishkek/geo/15763234351044273/74.602140,42.845143" target="_blank" aria-label="Location">
+              <img src="images/location.svg" alt="" />
             </a>
-            <a href="#" aria-label="WhatsApp">
+            <a href="https://wa.me/996220813148" target="_blank" aria-label="WhatsApp">
               <img src="images/whatsApp.svg" alt="" />
             </a>
           </div>
