@@ -773,7 +773,6 @@ input {
   display: flex;
   align-items: center;
   gap: clamp(15px, 4vw, 52px);
-  flex-wrap: wrap;
 }
 
 .author-brands img {
