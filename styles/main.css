@@ -133,12 +133,13 @@ input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  font-size: 14px;
+  padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 32px);
+  font-size: clamp(12px, 1.2vw, 14px);
   font-weight: 600;
   border-radius: 30px;
   transition: var(--transition);
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -199,23 +200,24 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .logo img {
-  height: 40px;
+  height: clamp(30px, 4vw, 40px);
   width: auto;
   fill: #0000008c;
 }
 
 .nav-menu {
   display: flex;
-  gap: 40px;
+  gap: clamp(15px, 3vw, 40px);
   align-items: center;
 }
 
 .nav-menu li a {
   color: var(--color-white);
-  font-size: 20px;
+  font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 400;
   white-space: nowrap;
 }
@@ -223,7 +225,7 @@ input {
 .nav-menu a {
   color: var(--color-white);
   font-weight: 700;
-  font-size: 20px;
+  font-size: clamp(14px, 1.5vw, 20px);
   line-height: 100%;
   letter-spacing: 0%;
 }
@@ -252,8 +254,7 @@ input {
    Hero Section
    ========================================================================== */
 .hero {
-  max-height: 882px;
-  height: 100%;
+  min-height: 100vh;
   background-image: url(../images/hero-character.png);
   background-size: cover;
   background-position: center;
@@ -1044,13 +1045,18 @@ input {
 }
 
 @media (max-width: 1024px) {
+  .nav-menu,
+  .header .btn {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
   .hero .container {
     flex-direction: column;
     text-align: center;
-  }
-
-  .nav-menu {
-    gap: 20px;
   }
 
   .blur {
@@ -1148,17 +1154,6 @@ input {
 
   .form-section {
     margin-bottom: 60px;
-  }
-}
-
-@media (max-width: 878px) {
-  .nav-menu,
-  .header .btn {
-    display: none;
-  }
-
-  .burger {
-    display: flex;
   }
 }
 
@@ -1503,11 +1498,6 @@ input {
 
   .section-title {
     font-size: 20px;
-  }
-
-  .nav-menu li a,
-  .nav-menu a {
-    font-size: 16px;
   }
 
   .video-placeholder img {

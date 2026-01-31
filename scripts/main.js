@@ -22,7 +22,7 @@
    * 6. Скопируйте URL и вставьте сюда
    */
   const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxp8h9BykaBX0QjZUy9wVc2DocPGXXukxAqP0EFYRt1fxNN-MPnXhyzpfI2Bjw2aDhS/exec";
+    "https://script.google.com/macros/s/AKfycbxpvTMThzibsn1CaB7RkxRrLYgs-mz9o0gx41iEXRZgXAepyJfUfwvImETIjs6PYxhB/exec";
 
   // ==========================================================================
   // DOM Elements
@@ -49,7 +49,7 @@
   }
 
   // Make hideToast global for the onclick handler
-  window.hideToast = function() {
+  window.hideToast = function () {
     if (toast) {
       toast.classList.remove("show");
     }
