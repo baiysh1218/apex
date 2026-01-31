@@ -252,8 +252,8 @@ input {
    Hero Section
    ========================================================================== */
 .hero {
-  min-height: 100vh;
-  min-height: 100dvh;
+  max-height: 882px;
+  height: 100%;
   background-image: url(../images/hero-character.png);
   background-size: cover;
   background-position: center;
@@ -275,6 +275,7 @@ input {
 
 .hero-content {
   flex: 1;
+  margin-top: 20px;
 }
 
 .hero-badge {
@@ -934,7 +935,7 @@ input {
   align-items: flex-start;
   gap: 10px;
   font-weight: 400;
-  font-size: clamp(16px, 3vw, 28px);
+  font-size: clamp(13px, 2vw, 20px);
   line-height: 100%;
   letter-spacing: 0%;
   color: #0000008f;
@@ -955,7 +956,7 @@ input {
 .footer-phone a {
   display: block;
   font-weight: 700;
-  font-size: clamp(20px, 4vw, 42px);
+  font-size: clamp(16px, 3vw, 28px);
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
@@ -969,7 +970,7 @@ input {
 
 .footer-phone span {
   font-weight: 400;
-  font-size: clamp(14px, 3vw, 28px);
+  font-size: clamp(13px, 2vw, 20px);
   line-height: 100%;
   letter-spacing: 0%;
   color: #0000008f;
@@ -1462,9 +1463,15 @@ input {
   }
 }
 
+@media (max-width: 400px) {
+  .hero {
+    background-size: 220%;
+  }
+}
+
 @media (max-width: 370px) {
   .hero {
-    background-size: 250%;
+    background-size: 270%;
   }
 }
 
