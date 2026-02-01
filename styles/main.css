@@ -264,6 +264,8 @@ input {
   display: flex;
   align-items: center;
   overflow: hidden;
+  border-bottom-left-radius: clamp(40px, 8vw, 108px);
+  border-bottom-right-radius: clamp(40px, 8vw, 108px);
 }
 
 .hero .container {
@@ -1024,6 +1026,11 @@ input {
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
+@media (max-width: 1400px) {
+  .hero {
+    background-size: 110%;
+  }
+}
 @media (max-width: 1300px) {
   .superpower > img {
     max-width: 250px;
