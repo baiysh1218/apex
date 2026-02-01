@@ -264,8 +264,6 @@ input {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-bottom-left-radius: clamp(40px, 8vw, 108px);
-  border-bottom-right-radius: clamp(40px, 8vw, 108px);
 }
 
 .hero .container {
@@ -616,16 +614,24 @@ input {
   position: absolute;
   bottom: 15px;
   left: 15px;
-  background-color: var(--color-red);
+  background-color: #3168f1;
+  width: 215px;
+  text-align: center;
   color: var(--color-white);
   padding: 8px 16px;
   border-radius: 20px;
-  font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding: 20px 0;
   text-transform: uppercase;
   box-shadow: var(--shadow-card);
 }
-
+.student-work-left {
+  left: auto;
+  right: 15px;
+}
 .learn-link {
   display: inline-block;
   margin-top: 15px;
