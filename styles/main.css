@@ -254,7 +254,8 @@ input {
    Hero Section
    ========================================================================== */
 .hero {
-  min-height: 100vh;
+  min-height: 883px;
+  height: 100%;
   background-image: url(../images/hero-character.png);
   background-size: cover;
   background-position: center;
@@ -562,7 +563,7 @@ input {
 }
 .blur {
   position: absolute;
-  left: -200px;
+  left: calc(50% - 50vw);
   z-index: -1;
   top: -200px;
 }
